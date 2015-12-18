@@ -1,4 +1,4 @@
-package Payroll
+package main
 
 // Employee is the base interface for things that know how to pay themselves
 type Employee interface {

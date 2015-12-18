@@ -1,4 +1,4 @@
-package Payroll
+package main
 
 import (
 	"strconv"
