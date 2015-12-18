@@ -25,13 +25,13 @@ func (qa *QaTester) CalculatePay() int64 {
 
 // Manager can pay all employees
 type Manager struct {
-	employees []*Employee
+	employees []Employee
 }
 
 // NewManager creates a new manager
 func NewManager() *Manager {
 	manager := new(Manager)
-	manager.employees = make([]*Employee, 10)
+	manager.employees = make([]Employee, 10)
 
 	return manager
 }
@@ -41,7 +41,7 @@ func (m *Manager) CalculatePay() int64 {
 	var totalPay int64 = 300
 
 	for _, e := range m.employees {
-		totalPay = totalPay + (*e).CalculatePay()
+		totalPay = totalPay + e.CalculatePay()
 	}
 
 	return totalPay
@@ -49,5 +49,5 @@ func (m *Manager) CalculatePay() int64 {
 
 // AddEmployee to list of Managers reports
 func (m *Manager) AddEmployee(e Employee) {
-	m.employees = append(m.employees, &e)
+	m.employees = append(m.employees, e)
 }
